@@ -13,6 +13,7 @@ The code is not dependant on any framework (it can easily be used with Theano or
 # Installation instructions
 1. Install RabbitMQ onto the host machine: https://www.rabbitmq.com/install-debian.html
 2. Setup RabbitMQ securely on the host machine, following the instructions [here](./RabbitMQ_secure_setup.md).
+3. Setup passphrase-less ssh keys between any remote machines and the host machine: https://help.ubuntu.com/community/SSH/OpenSSH/Keys
 3. Create a virtual environment with the following python packages: 
   - pika
   - numpy
