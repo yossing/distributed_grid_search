@@ -24,4 +24,4 @@ The code is not dependant on any framework (it can easily be used with Theano or
 optionally, if you would like to try the examples: 
   - theano
   - lasagne
-4. Clone the git repository 
+4. Clone the git repository or download the code. 
