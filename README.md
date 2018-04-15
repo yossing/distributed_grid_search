@@ -11,4 +11,15 @@ All training data and results are stored on the host machine and are copied auto
 The code is not dependant on any framework (it can easily be used with Theano or Tensorflow). 
 
 # Installation instructions
-1. Install RabbitMQ onto the host machine following the instructions on: [https://www.rabbitmq.com/install-debian.html]
+1. Install RabbitMQ onto the host machine: https://www.rabbitmq.com/install-debian.html
+2. Setup RabbitMQ securely on the host machine, following the instructions [here](./RabbitMQ_secure_setup.md).
+3. Create a virtual environment with the following python packages: 
+  - pika
+  - numpy
+  - scipy
+  - paramiko
+  - scp
+  optionally, if you would like to try the examples: 
+  - theano
+  - lasagne
+4. Clone the git repository 
