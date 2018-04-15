@@ -19,7 +19,7 @@ The code is not dependant on any framework (it can easily be used with Theano or
   - scipy
   - paramiko
   - scp
-  optionally, if you would like to try the examples: 
+optionally, if you would like to try the examples: 
   - theano
   - lasagne
 4. Clone the git repository 
