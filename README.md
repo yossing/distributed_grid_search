@@ -19,6 +19,7 @@ The code is not dependant on any framework (it can easily be used with Theano or
   - scipy
   - paramiko
   - scp
+  
 optionally, if you would like to try the examples: 
   - theano
   - lasagne
