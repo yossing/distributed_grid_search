@@ -1,11 +1,8 @@
 All necessary info can be found here: https://www.rabbitmq.com/man/rabbitmqctl.1.man.html
 
 First delete the guest user that comes as a default:
-
- sudo rabbitmqctl delete_user guest
-
+ '''sudo rabbitmqctl delete_user guest'''
 Next install new secure user with a good password. eg:
-
 sudo rabbitmqctl add_user '''user psswd'''
 
 Add a virtual host which you will use to schedule your processes:
