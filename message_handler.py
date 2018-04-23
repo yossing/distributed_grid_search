@@ -78,23 +78,20 @@ class MessageHandler(object):
                 #If there is an exception, it will manually be readded to the queue.
                 ch.basic_ack(delivery_tag=method.delivery_tag)
 
-                #This assumes you have formatted your messages as JSON strings
-                message_body = message_body.decode()
-                message_body = json.loads(message_body)
+                decoded_message_body = message_body.decode()
+                decoded_message_body = json.loads(decoded_message_body)
 
                 #Close the connection, as we don't need it open while processing the message.
                 self.connection.close()
                 #Now handle the message
-                function_handle(message_body)
+                function_handle(decoded_message_body)
                 print(" [x] Done handling message")
 
-            except Exception as e:#pika.exceptions.ConnectionClosed:
-                print('*** Caught exception: ' + str(e.__class__) + ': ' + str(e))
-                traceback.print_exc()
-
-                # print('oops. lost connection. trying to reconnect.')
+            except BaseException as e:
                 print('Failed to complete handling message. Re-adding to the queue.')
                 self.send_messages([message_body])
+                print('Done. re-raising caught exception.')
+
                 if quit_on_error:
                     raise(e)
                 #start receiving messages again
@@ -117,5 +114,3 @@ class MessageHandler(object):
             channel.basic_consume(callback,
                                   queue=self.task_name)
             channel.start_consuming()
-
-
